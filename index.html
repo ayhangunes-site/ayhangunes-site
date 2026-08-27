@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayhan Güneş | Bilişim Teknolojileri Portalı</title>
+    <style>
+        :root { --primary: #1e3a8a; --accent: #0d9488; --bg: #f8fafc; --text: #334155; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--primary), #1e40af); color: white; padding: 3rem 1rem; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        nav { background: #0f172a; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+        .hero-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--accent); }
+        .card h2 { color: var(--primary); margin-bottom: 1rem; }
+        .btn { display: inline-block; margin-top: 1rem; background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .btn:hover { background: #1d4ed8; }
+        footer { background: #0f172a; color: white; text-align: center; padding: 1.5rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bilişim Teknolojileri ve Yazılım Dünyası</h1>
+        <p>Türkiye Yüzyılı Maarif Modeli Odaklı Eğitim ve Rehber Portalı</p>
+    </header>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="sinif5.html">5. Sınıf Planları</a>
+        <a href="sinif6.html">6. Sınıf Planları</a>
+        <a href="ogrenci-kosesi.html">Öğrenci Köşesi & Soru-Cevap</a>
+        <a href="meslektas-portali.html">Öğretmen Portalı</a>
+    </nav>
+    <div class="container">
+        <div class="hero-grid">
+            <div class="card">
+                <h2>5. Sınıf Bilişim Rehberi</h2>
+                <p>Dijital ürün tasarımı, bilgisayar ağları, etik kurallar ve yapay zeka temellerine giriş yapın. Kazanım bazlı haftalık planlar ve materyaller.</p>
+                <a href="sinif5.html" class="btn">5. Sınıfı İncele</a>
+            </div>
+            <div class="card">
+                <h2>6. Sınıf Bilişim Rehberi</h2>
+                <p>İleri düzey algoritma, blok tabanlı ve metin tabanlı programlama temelleri, veri yönetimi ve siber güvenlik projeleri.</p>
+                <a href="sinif6.html" class="btn">6. Sınıfı İncele</a>
+            </div>
+            <div class="card">
+                <h2>Öğrenci & Zümre Alanı</h2>
+                <p>Sık sorulan sorular, kodlama ipuçları, eTwinning proje örnekleri ve bilişim öğretmenleri için özel döküman havuzu.</p>
+                <a href="ogrenci-kosesi.html" class="btn">Keşfet</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Ayhan Güneş | Bilişim Teknolojileri Öğretmeni</p>
+    </footer>
+</body>
+</html>

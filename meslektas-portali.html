@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meslektaş Portalı & Zümre Alanı | Ayhan Güneş</title>
+    <style>
+        :root { --primary: #1e3a8a; --accent: #0d9488; --bg: #f8fafc; --text: #334155; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--primary), #1e40af); color: white; padding: 2.5rem 1rem; text-align: center; }
+        header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+        nav { background: #0f172a; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .container { max-width: 1050px; margin: 2rem auto; padding: 0 1rem; }
+        .resource-card { background: white; padding: 2.2rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--accent); }
+        .resource-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .resource-card p { margin-bottom: 1rem; color: #475569; }
+        ul { padding-left: 20px; margin-top: 0.5rem; }
+        li { margin-bottom: 0.6rem; }
+        
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .software-item {
+            background: #f1f5f9;
+            padding: 1.2rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .software-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+
+        .software-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: white;
+            padding: 5px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .software-info h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .software-info p {
+            font-size: 0.88rem;
+            margin-bottom: 0.5rem;
+            color: #64748b;
+        }
+
+        .software-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .software-link:hover {
+            text-decoration: underline;
+        }
+
+        footer { background: #0f172a; color: white; text-align: center; padding: 1.5rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>👩‍🏫 Meslektaş Portalı ve Zümre Paylaşım Alanı</h1>
+        <p>Bilişim Teknolojileri Eğitmenleri İçin Maarif Modeli, Yöntem, Ölçme ve Dijital Program Tavsiyeleri</p>
+    </header>
+    <nav>
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="sinif5.html">📘 5. Sınıf</a>
+        <a href="sinif6.html">📗 6. Sınıf</a>
+        <a href="ogrenci-kosesi.html">❓ Öğrenci Köşesi</a>
+        <a href="meslektas-portali.html">👩‍🏫 Öğretmen Portalı</a>
+    </nav>
+    <div class="container">
+        
+        <!-- 1. BÖLÜM: MAARİF MODELİ -->
+        <div class="resource-card">
+            <h3>🧭 Türkiye Yüzyılı Maarif Modeli Uygulama Esasları</h3>
+            <p>Yeni modelin getirdiği <strong>erdem-değer-eylem bütünleşmesi</strong> çerçevesinde, ortaokul bilişim derslerinde dikkat edilmesi gereken kritik pedagojik yaklaşımlar:</p>
+            <ul>
+                <li>🎯 <strong>Süreç Odaklı Değerlendirme:</strong> Sonuç odaklı sınavlar yerine gözlem formları, katılım rubrikleri ve dijital ürün geliştirme süreçlerinin izlenmesi.</li>
+                <li>🧠 <strong>Bilgi İşlemsel Düşünme:</strong> Soyutlama, ayrıştırma, örüntü tanıma ve algoritmik mantığı sadece ekranda değil, günlük yaşam problem çözme süreçlerinde de aktif kullanma.</li>
+                <li>🤝 <strong>Sosyal-Duygusal Beceriler:</strong> Dijital ortak çalışma alanlarında empati, dijital vatandaşlık bilinci ve takım çalışması yetkinliklerinin pekiştirilmesi.</li>
+            </ul>
+        </div>
+
+        <!-- 2. BÖLÜM: ÖNERİLEN PROGRAMLAR VE ARAÇLAR -->
+        <div class="resource-card">
+            <h3>💻 Sınıf İçi ve Laboratuvar İçin Önerilen Program & Araç Tavsiyeleri</h3>
+            <p>Ortaokul müfredatını zenginleştirmek, öğrencilerin motivasyonunu artırmak ve interaktif öğrenme ortamı yaratmak için zümremizin sıklıkla kullandığı onaylı platformlar:</p>
+            
+            <div class="software-grid">
+                <!-- Scratch -->
+                <div class="software-item">
+                    <img src="https://scratch.mit.edu/favicon.ico" alt="Scratch Logo" class="software-logo">
+                    <div class="software-info">
+                        <h4>Scratch</h4>
+                        <p>Blok tabanlı temel ve orta düzey programlama, oyun ve animasyon geliştirme.</p>
+                        <a href="https://scratch.mit.edu" target="_blank" class="software-link">🌐 Platformu İncele &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Code.org -->
+                <div class="software-item">
+                    <img src="https://code.org/images/favicon.ico" alt="Code.org Logo" class="software-logo">
+                    <div class="software-info">
+                        <h4>Code.org</h4>
+                        <p>Bulmaca temelli algoritma mantığı, Hour of Code etkinlikleri ve haftalık dersler.</p>
+                        <a href="https://code.org" target="_blank" class="software-link">🌐 Platformu İncele &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Tinkercad -->
+                <div class="software-item">
+                    <img src="https://www.tinkercad.com/favicon.ico" alt="Tinkercad Logo" class="software-logo">
+                    <div class="software-info">
+                        <h4>Tinkercad</h4>
+                        <p>3 boyutlu tasarım, elektronik devre simülasyonları ve kodla tasarım modülleri.</p>
+                        <a href="https://www.tinkercad.com" target="_blank" class="software-link">🌐 Platformu İncele &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- LibreOffice / Excel -->
+                <div class="software-item">
+                    <img src="https://www.libreoffice.org/favicon.ico" alt="LibreOffice Logo" class="software-logo">
+                    <div class="software-info">
+                        <h4>Elektronik Tablolama</h4>
+                        <p>Veri yönetimi, filtreleme, biçimlendirme ve grafik oluşturma uygulamaları için.</p>
+                        <a href="https://www.libreoffice.org" target="_blank" class="software-link">🌐 Platformu İncele &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Padlet -->
+                <div class="software-item">
+                    <img src="https://padlet.com/favicon.ico" alt="Padlet Logo" class="software-logo">
+                    <div class="software-info">
+                        <h4>Padlet</h4>
+                        <p>Ortak dijital pano oluşturma, öğrenci fikirlerini toplama ve beyin fırtınası etkinlikleri.</p>
+                        <a href="https://padlet.com" target="_blank" class="software-link">🌐 Platformu İncele &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- eTwinning -->
+                <div class="software-item">
+                    <img src="https://www.etwinning.net/favicon.ico" alt="eTwinning Logo" class="software-logo">
+                    <div class="software-info">
+                        <h4>eTwinning</h4>
+                        <p>Avrupa'daki okullarla ortak dijital projeler kurma, iş birliği ve iyi örnek paylaşımı.</p>
+                        <a href="https://www.etwinning.net" target="_blank" class="software-link">🌐 Platformu İncele &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BÖLÜM: PROJE VE ÖLÇME -->
+        <div class="resource-card">
+            <h3>🌐 Proje Tabanlı Öğrenme & Ölçme-Değerlendirme</h3>
+            <p>Uluslararası iş birliğini artırmak ve öğrenci çıktılarını objektif değerlendirmek için pratik zümre önerileri:</p>
+            <ul>
+                <li>🌱 <strong>"Green Digital Citizens":</strong> Dijital atık yönetimi, elektronik tasarruf ve çevre bilinci odaklı kodlama projeleri.</li>
+                <li>🤖 <strong>"AI for Good":</strong> Öğrencilerin toplumsal bir probleme çözüm sunan basit yapay zekâ senaryoları tasarlaması.</li>
+                <li>📋 <strong>Uygulama Rubrikleri:</strong> Scratch oyun geliştirme ve HTML/CSS kodlama süreçleri için detaylı performans dereceli puanlama anahtarları.</li>
+            </ul>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2026 Ayhan Güneş | Bilişim Teknolojileri Öğretmeni. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
