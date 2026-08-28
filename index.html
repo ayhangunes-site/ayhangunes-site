@@ -3,58 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayhan Güneş | Bilişim Teknolojileri Portalı</title>
+    <title>Ayhan Güneş | Bilişim Teknolojileri ve Yazılım Portalı</title>
     <style>
-        :root { --primary: #1e3a8a; --accent: #0d9488; --bg: #f8fafc; --text: #334155; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: linear-gradient(135deg, var(--primary), #1e40af); color: white; padding: 3rem 1rem; text-align: center; }
-        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        nav { background: #0f172a; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 100; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 600; transition: color 0.3s; }
-        nav a:hover { color: var(--accent); }
-        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
-        .hero-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--accent); }
-        .card h2 { color: var(--primary); margin-bottom: 1rem; }
-        .btn { display: inline-block; margin-top: 1rem; background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
-        .btn:hover { background: #1d4ed8; }
-        footer { background: #0f172a; color: white; text-align: center; padding: 1.5rem; margin-top: 4rem; }
+        :root {
+            --color-void: #000000;
+            --color-bone-white: #ffffff;
+            --color-ash-gray: #9a9a9a;
+            --color-silver-mist: #bdbdbd;
+            --color-electric-iris: #8052ff;
+            --color-saffron-spark: #ffb829;
+            --color-deep-verdant: #15846e;
+
+            --font-ppneuemontreal: 'PP Neue Montreal', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-void);
+            color: var(--color-bone-white);
+            font-family: var(--font-ppneuemontreal);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 24px 0;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-lockup {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--color-bone-white);
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+        }
+
+        .logo-icon {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, var(--color-electric-iris), var(--color-deep-verdant));
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-ash-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--color-bone-white);
+        }
+
+        /* Primary Action Button (Violet Pill) */
+        .btn-primary {
+            background-color: var(--color-electric-iris);
+            color: var(--color-bone-white);
+            padding: 14.4px 16px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            display: inline-block;
+            transition: opacity 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        header.hero {
+            padding: 180px 0 120px 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-label {
+            color: var(--color-saffron-spark);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.035em;
+            margin-bottom: 18px;
+        }
+
+        h1.hero-title {
+            font-size: 78px;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -3.12px;
+            margin-bottom: 24px;
+        }
+
+        .hero-body {
+            font-size: 18px;
+            font-weight: 200;
+            line-height: 1.5;
+            color: var(--color-silver-mist);
+            max-width: 480px;
+            margin-bottom: 36px;
+        }
+
+        /* Particle / Geometric Hero Visual Simulation */
+        .hero-visual {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .constellation-brain {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border: 1px solid;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: -1.68px;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            font-weight: 200;
+            color: var(--color-silver-mist);
+        }
+
+        /* Two Column Content Grids */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+
+        .content-block {
+            padding: 36px 0;
+        }
+
+        .content-block h3 {
+            font-size: 27px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            color: var(--color-bone-white);
+            letter-spacing: -0.48px;
+        }
+
+        .content-block p {
+            font-size: 18px;
+            font-weight: 200;
+            color: var(--color-ash-gray);
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .ghost-link {
+            color: var(--color-bone-white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 2px;
+            transition: border-color 0.2s;
+        }
+
+        .ghost-link:hover {
+            border-color: var(--color-electric-iris);
+            color: var(--color-electric-iris);
+        }
+
+        /* Tables for Plans */
+        .plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+        }
+
+        .plan-table th, .plan-table td {
+            text-align: left;
+            padding: 18px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 16px;
+        }
+
+        .plan-table th {
+            font-weight: 400;
+            color: var(--color-saffron-spark);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .plan-table td {
+            font-weight: 200;
+            color: var(--color-silver-mist);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--color-ash-gray);
+            font-size: 14px;
+            font-weight: 200;
+        }
+
+        @media(max-width: 900px) {
+            .hero-grid, .content-grid {
+                grid-template-columns: 1fr;
+            }
+            h1.hero-title {
+                font-size: 48px;
+                letter-spacing: -1.68px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bilişim Teknolojileri ve Yazılım Dünyası</h1>
-        <p>Türkiye Yüzyılı Maarif Modeli Odaklı Eğitim ve Rehber Portalı</p>
-    </header>
+
+    <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="sinif5.html">5. Sınıf Planları</a>
-        <a href="sinif6.html">6. Sınıf Planları</a>
-        <a href="ogrenci-kosesi.html">Öğrenci Köşesi & Soru-Cevap</a>
-        <a href="meslektas-portali.html">Öğretmen Portalı</a>
+        <div class="nav-container">
+            <a href="#" class="logo-lockup">
+                <div class="logo-icon"></div>
+                Ayhan Güneş
+            </a>
+            <ul class="nav-links">
+                <li><a href="#giris" class="active">Ana Sayfa</a></li>
+                <li><a href="#sinif5">5. Sınıf</a></li>
+                <li><a href="#sinif6">6. Sınıf</a></li>
+                <li><a href="#ogrenci">Öğrenci Köşesi</a></li>
+                <li><a href="#portal">Öğretmen Portalı</a></li>
+            </ul>
+            <a href="#portal" class="btn-primary">Portal Giriş</a>
+        </div>
     </nav>
-    <div class="container">
-        <div class="hero-grid">
-            <div class="card">
-                <h2>5. Sınıf Bilişim Rehberi</h2>
-                <p>Dijital ürün tasarımı, bilgisayar ağları, etik kurallar ve yapay zeka temellerine giriş yapın. Kazanım bazlı haftalık planlar ve materyaller.</p>
-                <a href="sinif5.html" class="btn">5. Sınıfı İncele</a>
-            </div>
-            <div class="card">
-                <h2>6. Sınıf Bilişim Rehberi</h2>
-                <p>İleri düzey algoritma, blok tabanlı ve metin tabanlı programlama temelleri, veri yönetimi ve siber güvenlik projeleri.</p>
-                <a href="sinif6.html" class="btn">6. Sınıfı İncele</a>
-            </div>
-            <div class="card">
-                <h2>Öğrenci & Zümre Alanı</h2>
-                <p>Sık sorulan sorular, kodlama ipuçları, eTwinning proje örnekleri ve bilişim öğretmenleri için özel döküman havuzu.</p>
-                <a href="ogrenci-kosesi.html" class="btn">Keşfet</a>
+
+    <!-- Hero Section -->
+    <header class="hero" id="giris">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-label">Bilişim Teknolojileri ve Yazılım</div>
+                    <h1 class="hero-title">Türkiye Yüzyılı Maarif Modeli ile Dijital Gelecek.</h1>
+                    <p class="hero-body">Ortaokul öğrencilerimiz için bilgi işlemsel düşünme, meslektaşlarımız için zenginleştirilmiş materyal havuzu ve modern rehber portalı.</p>
+                    <a href="#sinif5" class="btn-primary">Planları İncele</a>
+                </div>
+                <div class="hero-visual">
+                    <!-- Abstrakt Constellation/Brain particle layout simülasyonu -->
+                    <div class="constellation-brain" id="particle-field">
+                        <div class="particle" style="top: 20%; left: 30%; border-color: var(--color-electric-iris);"></div>
+                        <div class="particle" style="top: 40%; left: 70%; border-color: var(--color-saffron-spark);"></div>
+                        <div class="particle" style="top: 60%; left: 20%; border-color: var(--color-deep-verdant);"></div>
+                        <div class="particle" style="top: 80%; left: 60%; border-color: var(--color-electric-iris);"></div>
+                        <div class="particle" style="top: 30%; left: 50%; border-color: var(--color-bone-white);"></div>
+                        <div class="particle" style="top: 50%; left: 40%; border-color: var(--color-saffron-spark);"></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
+
+    <!-- 5. Sınıf Section -->
+    <section id="sinif5">
+        <div class="container">
+            <div class="section-header">
+                <h2>5. Sınıf Müfredat Çerçevesi</h2>
+                <p>Maarif Modeli odaklı kazanım ve tematik plan yapısı.</p>
+            </div>
+            <table class="plan-table">
+                <thead>
+                    <tr>
+                        <th>Tema / Ünite Adı</th>
+                        <th>Hafta</th>
+                        <th>Temel Beceriler ve Kazanımlar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Bilişim Teknolojileri ve Hayatımız</strong></td>
+                        <td>1 - 3. Hafta</td>
+                        <td>Donanım ve yazılım bileşenleri, günlük yaşamda teknolojinin rolleri.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Dijital Ürün Tasarımı</strong></td>
+                        <td>4 - 8. Hafta</td>
+                        <td>Görsel tasarım ilkelerine uygun metin ve sunum içerikleri üretme.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Bilgisayar Ağları ve Güvenlik</strong></td>
+                        <td>9 - 16. Hafta</td>
+                        <td>Etkin arama stratejileri, dijital ayak izi ve güçlü parola oluşturma.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Yazılım Tasarımı ve Algoritma</strong></td>
+                        <td>17 - 36. Hafta</td>
+                        <td>Blok tabanlı programlama (Scratch) ortamında karar yapıları ve döngüler.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 6. Sınıf Section -->
+    <section id="sinif6">
+        <div class="container">
+            <div class="section-header">
+                <h2>6. Sınıf İleri Düzey Beceriler</h2>
+                <p>Veri yönetimi, web tasarımı ve siber farkındalık.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>Veri Yönetimi ve Tablolama</h3>
+                    <p>Elektronik tablo uygulamaları ile veri toplama, filtreleme, biçimlendirme ve anlamlı grafikler elde etme süreçleri.</p>
+                    <a href="#" class="ghost-link">Detayları Gör &rarr;</a>
+                </div>
+                <div class="content-block">
+                    <h3>Web Tasarımına Giriş (HTML/CSS)</h3>
+                    <p>Temel etiketler ve biçimlendirme komutları yardımıyla kendi statik web sayfalarını kodlama deneyimi.</p>
+                    <a href="#" class="ghost-link">Detayları Gör &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Öğrenci Köşesi Soru-Cevap -->
+    <section id="ogrenci">
+        <div class="container">
+            <div class="section-header">
+                <h2>Öğrenci Köşesi</h2>
+                <p>Bilişim dersinde en çok merak edilenler.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>Dijital Ayak İzi Nedir?</h3>
+                    <p>İnternette gerçekleştirdiğimiz her etkileşim, arama ve paylaşım kalıcı izler bırakır. Bilinçli bireyler olarak verilerimizi korumalıyız.</p>
+                </div>
+                <div class="content-block">
+                    <h3>Scratch Değişkenleri Neden Önemlidir?</h3>
+                    <p>Oyun içerisindeki skoru, süreyi ve can sayısını hafızasında tutan dinamik kutucuklardır; programlamaya akış kazandırır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Öğretmen Portalı -->
+    <section id="portal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meslektaş Portalı & Kaynaklar</h2>
+                <p>Eğitmenler için onaylı dijital araçlar, logolar ve bağlantı havuzu.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>Önerilen Platformlar</h3>
+                    <p>Laboratuvar derslerinde motivasyonu artıran onaylı araçlar: Scratch, Code.org, Tinkercad ve Padlet entegrasyonları.</p>
+                    <a href="https://scratch.mit.edu" target="_blank" class="ghost-link">Scratch Platformu &rarr;</a>
+                </div>
+                <div class="content-block">
+                    <h3>Maarif Modeli Uygulama Esasları</h3>
+                    <p>Süreç odaklı değerlendirme yaklaşımları, bilgi işlemsel düşünme becerileri ve sosyal-duygusal öğrenme formları.</p>
+                    <a href="https://www.etwinning.net" target="_blank" class="ghost-link">eTwinning Ağları &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Ayhan Güneş | Bilişim Teknolojileri Öğretmeni</p>
+        <div class="container">
+            <p>&copy; 2026 Ayhan Güneş — Bilişim Teknolojileri ve Yazılım Portalı. Tüm hakları saklıdır.</p>
+        </div>
     </footer>
+
 </body>
 </html>
